@@ -1,0 +1,15 @@
+  <div>
+    <h3>countries</h3>
+    <button (click)="getCountries()">Get</button>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let country of countriesData">
+        <div class="card">
+          <div class="box" (click)="alertTemp(country.name)" class="card-body">
+            <a>{{ country.name }}</a>
+            <img class="imageResize" src="{{ country.flag }}" width="10%" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,14 @@
+  <div>
+    <h3>countries</h3>
+    <button (click)="getbtn()">Get</button>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let names of data">
+        <div class="card">
+          <div class= "box"(click)='degree()'class="card-body">
+            <a>{{names.name}}</a>
+            <img class="imageResize" src="{{names.flag}}" width=10%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
