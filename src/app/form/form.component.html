@@ -1,0 +1,104 @@
+<!-- <p>form works!</p> -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card card-body">
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()" class="form-horizontal col-sm-12">
+        <div class="form-group col-sm-4">
+          <label class="col-form-label">Name</label>
+          <input formControlName="name" type="text" class="form-control" placeholder="Name" />
+        </div>
+        <div class="form-group col-sm-4 ">
+          <label class="col-form-label">Email</label>
+          <input formControlName="email" type="email" class="form-control" placeholder="email" />
+        </div>
+        <div class="form-group col-sm-4">
+          <label class="col-form-label">Password</label>
+          <input formControlName="Password" type="password" class="form-control" placeholder="Password" />
+        </div>
+        <!--*********************-->
+        <div class="row">
+            <div class="form-group col-sm-4 ">
+              <div>
+                <label for="inputState" class="col-form-label">Country</label>
+                <select id="inputState" formControlName="nation" class="form-control">
+                  <option value="india">India</option>
+                  <option value="america">America</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group col-sm-4 " *ngIf="this.num == true">
+                <label for="inputState" class="col-form-label">state</label>
+                <select id="inputState" formControlName="india" class="form-control">
+                  <option value="Tamilnadu">Tamilnadu</option>
+                  <option value="Kerala">Kerala</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-4 " *ngIf="this.num == false">
+                <label for="inputState" class="col-form-label">state</label>
+                <select id="inputState" formControlName="american" class="form-control">
+                  <option value="New york">New york</option>
+                  <option value="California">California</option>
+                </select>
+            </div>
+          </div>
+        <!--*********************-->
+        <div class="form-group col-sm-4 ">
+          <label class="col-form-label">Gender</label>
+          <div class="row">
+            <div class="form-check form-check-inline">
+              <input formControlName="Gender" class="form-check-input" type="radio" id="inlineRadio1" value="Male">
+              <label class="form-check-label">Male</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input formControlName="Gender" class="form-check-input" type="radio" id="inlineRadio2" value="Female">
+              <label class="form-check-label">Female</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-sm-4 ">
+          <label class="col-form-label">Martial Status</label>
+          <div class="row">
+            <div class="form-check form-check-inline">
+              <input formControlName="status" class="form-check-input" type="radio" id="inlineRadio1" value="married">
+              <label class="form-check-label">married</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input formControlName="status" class="form-check-input" type="radio" id="inlineRadio2" value="unmarried">
+              <label class="form-check-label">unmarried</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-sm-4" formArrayName="favcolour">
+            <label class="col-form-label">Favourite colour</label>
+            <div formGroupName="0" class="form-check form-check-inline">
+              <input formControlName="yellow" class="form-check-input" type="checkbox" id="inlineCheckbox1"
+                value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Yellow</label>
+            </div>
+            <div formGroupName="1" class="form-check form-check-inline">
+              <input formControlName="white" class="form-check-input" type="checkbox" id="inlineCheckbox2"
+                value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">White</label>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-lg-6">
+          <pre><code>{{userForm.value | json}}</code></pre>
+        </div> -->
+        <div class="row">
+          <div class="form-group col-sm-4  "></div>
+          <div class="form-group col-sm-4  ">
+            <div class="buttonAlign">
+              <button type="submit" class="btn btn-primary signIn ">
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
