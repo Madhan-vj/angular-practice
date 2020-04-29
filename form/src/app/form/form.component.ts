@@ -13,7 +13,6 @@ export class FormComponent implements OnInit {
   cityusa:boolean = false;
   reject:boolean = false;
   rejectusa:boolean = false;
-  numbr:boolean = false;
   nation;
   constructor() { 
     this.userForm = new FormGroup({
@@ -35,7 +34,6 @@ export class FormComponent implements OnInit {
     this.userForm.get("nation").valueChanges.subscribe(data =>{
       if(data == "india"){
         this.num = true;
-        this.numbr = false;
         this.userForm.addControl("india", new FormControl(1));
         this.userForm.removeControl("american");
         this.userForm.get("india").valueChanges.subscribe(data=>{
@@ -63,11 +61,9 @@ export class FormComponent implements OnInit {
       }
       else{
         this.num = false;
-        this.numbr = true;
         this.userForm.addControl("american", new FormControl(1));
         this.userForm.removeControl("india");
         this.userForm.get("american").valueChanges.subscribe(data=>{
-          console.log("****",data);
           if(data == "florida"){
             this.cityusa = true;
             this.rejectusa = false;
@@ -88,7 +84,7 @@ export class FormComponent implements OnInit {
             this.userForm.removeControl("tamilnadu");
             this.userForm.removeControl("kerala");
           }
-        });
+        })
       }
     });
   }
